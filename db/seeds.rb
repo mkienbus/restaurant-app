@@ -6,4 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-restaurants = Restaurant.create([{name: 'Vivi Pho', address:}])
+users = User.create([{name: 'Michael Kienbusch'}
+    ])
+
+restaurants = Restaurant.create([
+    {name: 'Vivi Pho', address: "780 S Colorado Blvd B, Glendale, CO 80246", cuisine_type: "Vietnamese", favorite: true, user_id: 1},
+    {name: 'Denver Pizza Company', address: "309 W 11th Ave, Denver, CO 80204", cuisine_type: "Pizza", favorite: false, user_id: 1}
+    ])
