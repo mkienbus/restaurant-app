@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    #skip_before_action :authorize, only: :create
 
     #POST route for signup
     def create

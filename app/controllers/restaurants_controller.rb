@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-    #index, create, update, destroy, show
+    #skip_before_action :authorize, only: :create
 
     #POST route for create
     def create
