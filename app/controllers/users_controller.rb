@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
     #skip_before_action :authorize, only: :create
 
+    #GET route, needed?
+    def index
+        users = User.all
+        render json: users
+    end
+
+    #GET route
+    def show
+        user = User.find(params[:id])
+        #user = User.find(@current_user.id)
+        render json: user
+
+    end
+
     #POST route for signup
     def create
         user = User.create(user_params)
