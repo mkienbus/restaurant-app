@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   resources :restaurants
-  resources :users
+  resources :users, only: [:create]
+  resources :sessions, only: [:create, :destroy]
 
 
   # Routing logic: fallback requests for React Router.
