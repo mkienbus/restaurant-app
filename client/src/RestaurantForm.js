@@ -10,11 +10,25 @@ function RestaurantForm(){
 
     function handleSubmit(e){
         e.preventDefault();
+        // fetch needs to go to localhost:4000/restaurants
+        fetch('/restaurants', {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                name,
+                address,
+                cuisineType,
+                favorite
+            }),
+        }).then((r)=>{
+            console.log(r)
+        })
+        
     }
 
     return(
         <div>
-            <h1>Add a restaurant</h1>
+            <h1>Add a restaurant to list</h1>
             <form onSubmit = {handleSubmit}>
                 {/* text align left in css */}
                 <label>Name</label>
@@ -28,6 +42,8 @@ function RestaurantForm(){
                 <br></br>
                 <label>Favorite</label>
                 <input type = "checkbox" id = "favorite" value = {favorite} onChange = {e => setFavorite(e.target.checked)}/>
+                <br></br>
+                <input type = "submit"/>
             </form>
         </div>
     );
