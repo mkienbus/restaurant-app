@@ -1,9 +1,13 @@
 import './App.css';
 import React from 'react';
+import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
-import RestaurantForm from './RestaurantForm.js'
+import RestaurantForm from './RestaurantForm.js';
+
 
 function App() {
+  const [user, setUser] = useState(null)
+
 
 //MVP components
 //App
@@ -17,12 +21,18 @@ function App() {
   //sign up form
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <RestaurantForm />
-        <Restaurants />
-      </header>
-    </div>
+    <>
+    <main>
+      <Switch>
+        <Route path = "new">
+          <RestaurantForm />
+        </Route>
+       <Route path = "/">
+          <Restaurants />
+       </Route>
+      </Switch>
+    </main>
+    </>
   );
 }
 
