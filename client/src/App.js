@@ -1,13 +1,10 @@
 import './App.css';
 import React from 'react';
+import {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
 import RestaurantForm from './RestaurantForm.js';
-
-
-function App() {
-  const [user, setUser] = useState(null)
-
+import Login from './Login.js';
 
 //MVP components
 //App
@@ -19,6 +16,12 @@ function App() {
     //link to logout
   //sign in form
   //sign up form
+
+
+function App() {
+  const [user, setUser] = useState(null)
+
+  if (!user) return <Login />
 
   return (
     <>
