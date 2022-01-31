@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
 import RestaurantForm from './RestaurantForm.js';
-import Login from './Login.js';
+import LoginForm from './LoginForm.js';
 
 //MVP components
 //App
@@ -21,7 +21,7 @@ import Login from './Login.js';
 function App() {
   const [user, setUser] = useState(null)
 
-  if (!user) return <Login />
+  if (!user) return <LoginForm />
 
   return (
     <>
