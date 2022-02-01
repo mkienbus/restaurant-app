@@ -21,7 +21,7 @@ import LoginForm from './LoginForm.js';
 function App() {
   const [user, setUser] = useState(null)
 
-  if (!user) return <LoginForm />
+  if (!user) return <LoginForm setUser = {setUser} />
 
   return (
     <>

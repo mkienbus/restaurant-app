@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function LoginForm(){
+function LoginForm({setUser}){
 
     const [username, setUsername] = useState("")
 
@@ -14,13 +14,18 @@ function LoginForm(){
             body: JSON.stringify({username})
         }).then(r => {
             console.log(r)
+            r.json().then(user => setUser(user))
         })
     }
 
     return(
         <div>
             <form onSubmit = {handleSubmit}>
-                <input type = "text" id = "username" value = {username} 
+                <label>Login:</label>
+                <input 
+                type = "text" 
+                id = "username" 
+                value = {username} 
                 onChange = {e => setUsername(e.target.value)}/>
 
             </form>
