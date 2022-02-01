@@ -12,10 +12,16 @@ function Restaurants() {
       .then(setRestaurants)
   }, [])
 
+  function resetDom(restaurant){
+    setRestaurants((restaurants) => restaurants.filter(r => r.id !== restaurant.id))
+
+    console.log("resetDom");
+  }
+
   return (
     <div className="Restaurants">
         <h1>Restaurants</h1>
-          {restaurants.map((r) =><RestaurantCard restaurant = {r} key = {r.id}/>
+          {restaurants.map((r) =><RestaurantCard restaurant = {r} key = {r.id} resetDom = {resetDom}/>
           )}
     </div>
   );
