@@ -22,13 +22,13 @@ function SignUpForm({setUser}){
     return (
         <div>
             <form onSubmit = {handleSubmit}>
-                <label>Create an account with a username:</label>
+                <label>Username:</label>
                 <input 
                 type = "text" 
                 id = "signupUsername" 
                 value = {username} 
                 onChange = {e => setUsername(e.target.value)}/>
-                <button>Submit</button>
+                <button>Create</button>
             </form>
         </div>
     )
