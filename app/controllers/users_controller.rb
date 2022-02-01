@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :authorize
-    #, only: :create
+    skip_before_action :authorize, only: :create
 
     #GET route, needed?
     def index

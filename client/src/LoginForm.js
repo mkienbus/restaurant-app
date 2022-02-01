@@ -21,14 +21,15 @@ function LoginForm({setUser}){
 
     return(
         <div>
+            <h4>Login to your account</h4>
             <form onSubmit = {handleSubmit}>
-                <label>Login:</label>
+                <label>Username:</label>
                 <input 
                 type = "text" 
                 id = "username" 
                 value = {username} 
                 onChange = {e => setUsername(e.target.value)}/>
-                <button>Submit</button>
+                <button>Login</button>
             </form>
             <h4>Need to create an account?</h4>
             <SignUpForm setUser = {setUser}/>

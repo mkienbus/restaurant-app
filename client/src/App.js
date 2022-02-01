@@ -6,14 +6,6 @@ import Restaurants from './Restaurants.js';
 import RestaurantForm from './RestaurantForm.js';
 import LoginForm from './LoginForm.js';
 
-//MVP components
-  //Nav bar
-    //link to add restaurant form (create)
-    //link to logout
-  //sign in form
-  //sign up form
-
-
 function App() {
   const [user, setUser] = useState(null)
 
