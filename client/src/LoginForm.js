@@ -27,7 +27,7 @@ function LoginForm({setUser}){
                 id = "username" 
                 value = {username} 
                 onChange = {e => setUsername(e.target.value)}/>
-
+                <button>Submit</button>
             </form>
         </div>
     );

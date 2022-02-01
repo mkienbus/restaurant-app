@@ -21,6 +21,13 @@ import LoginForm from './LoginForm.js';
 function App() {
   const [user, setUser] = useState(null)
 
+  function handleLogoutClick(){
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+      .then(r => setUser(null))
+  }
+
   if (!user) return <LoginForm setUser = {setUser} />
 
   return (
@@ -32,6 +39,7 @@ function App() {
         </Route>
        <Route path = "/">
           <Restaurants />
+          <button onClick = {handleLogoutClick}>Logout</button>
        </Route>
       </Switch>
     </main>
