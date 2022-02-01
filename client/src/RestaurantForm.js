@@ -10,7 +10,6 @@ function RestaurantForm(){
 
     function handleSubmit(e){
         e.preventDefault();
-        // fetch needs to go to localhost:4000/restaurants
         fetch('/restaurants', {
             method: "POST",
             headers: {"Content-Type": "application/json"},

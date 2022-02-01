@@ -7,10 +7,6 @@ import RestaurantForm from './RestaurantForm.js';
 import LoginForm from './LoginForm.js';
 
 //MVP components
-//App
-  //restaurant container (index)
-    //restaurant card (show)
-  //restaurant form
   //Nav bar
     //link to add restaurant form (create)
     //link to logout
@@ -34,7 +30,7 @@ function App() {
     <>
     <main>
       <Switch>
-        <Route path = "new">
+        <Route path = "/new">
           <RestaurantForm />
         </Route>
        <Route path = "/">

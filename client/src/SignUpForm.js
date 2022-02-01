@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
-import SignUpForm from './SignUpForm';
 
-function LoginForm({setUser}){
 
+function SignUpForm({setUser}){
     const [username, setUsername] = useState("")
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch('/login',{
-            method: "POST",
+        fetch('/users',{
+            method: "POST", 
             headers: {
                 "Content-Type": "application/json",
             },
@@ -17,24 +16,23 @@ function LoginForm({setUser}){
             console.log(r)
             r.json().then(user => setUser(user))
         })
+        // need to reset input field to empty
     }
 
-    return(
+    return (
         <div>
             <form onSubmit = {handleSubmit}>
-                <label>Login:</label>
+                <label>Create an account with a username:</label>
                 <input 
                 type = "text" 
-                id = "username" 
+                id = "signupUsername" 
                 value = {username} 
                 onChange = {e => setUsername(e.target.value)}/>
                 <button>Submit</button>
             </form>
-            <h4>Need to create an account?</h4>
-            <SignUpForm setUser = {setUser}/>
         </div>
-    );
+    )
 
 }
 
-export default LoginForm;
+export default SignUpForm;
