@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import RestaurantCard from './RestaurantCard.js' 
 import RestaurantForm from './RestaurantForm.js';
 
-function Restaurants() {
+function Restaurants({user}) {
 
   const[restaurants, setRestaurants] = useState([]);
   console.log(restaurants)
@@ -19,7 +19,7 @@ function Restaurants() {
 
   return (
     <div className="Restaurants">
-        <RestaurantForm />
+        <RestaurantForm user = {user}/>
         <h1>Restaurants</h1>
           {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} resetDom = {resetDom}/>)}
     </div>

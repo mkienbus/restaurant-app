@@ -26,7 +26,7 @@ function App() {
           <RestaurantForm />
         </Route>
        <Route path = "/">
-          <Restaurants />
+          <Restaurants user = {user} />
           <button onClick = {handleLogoutClick}>Logout</button>
        </Route>
       </Switch>
