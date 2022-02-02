@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
 import RestaurantForm from './RestaurantForm.js';

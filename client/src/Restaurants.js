@@ -17,9 +17,13 @@ function Restaurants({user}) {
     setRestaurants((restaurants) => restaurants.filter(r => r.id !== restaurant.id))
   }
 
+  function resetDomForm(newRestaurant){
+    setRestaurants([...restaurants, newRestaurant])
+  }
+
   return (
     <div className="Restaurants">
-        <RestaurantForm user = {user}/>
+        <RestaurantForm user = {user} resetDomForm = {resetDomForm}/>
         <h1>Restaurants</h1>
           {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} resetDomRemove = {resetDomRemove}/>)}
     </div>

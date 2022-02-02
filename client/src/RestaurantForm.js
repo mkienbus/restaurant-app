@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 
 
-function RestaurantForm({user}){
+function RestaurantForm({user, resetDomForm}){
     const [name, setName] = useState("")
-    const [cuisineType, setCuisineType] = useState("")
+    const [cuisine_type, setCuisineType] = useState("")
     const [address, setAddress] = useState("")
     const [favorite, setFavorite] = useState(false)
 
@@ -16,14 +16,14 @@ function RestaurantForm({user}){
             body: JSON.stringify({
                 name,
                 address,
-                cuisineType,
+                cuisine_type,
                 favorite,
                 user_id: user.id
             }),
-        }).then((r)=>{
-            console.log(r)
         })
-        
+            .then(r =>r.json())
+            //.then(r => resetDomForm(r))
+          
     }
 
     return(
@@ -35,7 +35,7 @@ function RestaurantForm({user}){
                 <input type = "text" id = "name" value = {name} onChange = {e => setName(e.target.value)}/>
                 <br></br>
                 <label>Cuisine type:</label>
-                <input type = "text" id = "cuisineType" value = {cuisineType} onChange = {e => setCuisineType(e.target.value)}/>
+                <input type = "text" id = "cuisineType" value = {cuisine_type} onChange = {e => setCuisineType(e.target.value)}/>
                 <br></br>
                 <label>Address:</label>
                 <input type = "text" id = "address" value = {address} onChange = {e => setAddress(e.target.value)}/>
