@@ -27,7 +27,7 @@ function RestaurantForm(){
 
     return(
         <div>
-            <h1>Add a restaurant to list</h1>
+            <h1>Add a restaurant to the list</h1>
             <form onSubmit = {handleSubmit}>
                 {/* text align left in css */}
                 <label>Name</label>
