@@ -1,11 +1,11 @@
 import React from 'react';
 
-function RestaurantCard({restaurant, resetDom}){
+function RestaurantCard({restaurant, resetDomRemove}){
 
     function handleRemove(restaurant){
         fetch(`/restaurants/${restaurant.id}`, {
           method: 'DELETE'
-        }).then(r => {resetDom(restaurant)})
+        }).then(r => {resetDomRemove(restaurant)})
       }
 
     return(

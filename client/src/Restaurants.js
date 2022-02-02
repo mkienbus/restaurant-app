@@ -13,7 +13,7 @@ function Restaurants({user}) {
       .then(setRestaurants)
   }, [])
 
-  function resetDom(restaurant){
+  function resetDomRemove(restaurant){
     setRestaurants((restaurants) => restaurants.filter(r => r.id !== restaurant.id))
   }
 
@@ -21,7 +21,7 @@ function Restaurants({user}) {
     <div className="Restaurants">
         <RestaurantForm user = {user}/>
         <h1>Restaurants</h1>
-          {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} resetDom = {resetDom}/>)}
+          {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} resetDomRemove = {resetDomRemove}/>)}
     </div>
   );
 }
