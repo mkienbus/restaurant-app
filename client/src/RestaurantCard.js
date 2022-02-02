@@ -16,6 +16,7 @@ function RestaurantCard({restaurant, resetDomRemove}){
             <p>{restaurant.address}</p>
             <br></br>
             <button onClick = {e => handleRemove(restaurant)}>Remove above restaurant</button>
+            <button onClick = {e => console.log(e.target.value)}>Edit</button>
         </div>
     );
 
