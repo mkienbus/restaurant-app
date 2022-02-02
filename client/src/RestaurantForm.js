@@ -22,7 +22,7 @@ function RestaurantForm({user, resetDomForm}){
             }),
         })
             .then(r =>r.json())
-            //.then(r => resetDomForm(r))
+            .then(r => resetDomForm(r))
           
     }
 
