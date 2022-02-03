@@ -25,7 +25,7 @@ function Restaurants({user}) {
     <div className="Restaurants">
         <RestaurantForm user = {user} resetDomForm = {resetDomForm}/>
         <h1>Restaurants</h1>
-          {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} resetDomRemove = {resetDomRemove}/>)}
+          {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} user = {user} resetDomRemove = {resetDomRemove}/>)}
     </div>
   );
 }
