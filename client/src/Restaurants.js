@@ -21,11 +21,25 @@ function Restaurants({user}) {
     setRestaurants([...restaurants, newRestaurant])
   }
 
+  function handleEdit(restaurant){
+      console.log('handleEdit hit in Restaurants.js')
+      const edited = restaurants.map(r => {
+        if (restaurant.id === r.id){
+          return restaurant
+        }
+
+        else{
+          return r
+        }
+      })
+      setRestaurants(edited)
+  }
+
   return (
     <div className="Restaurants">
         <RestaurantForm user = {user} resetDomForm = {resetDomForm}/>
         <h1>Restaurants</h1>
-          {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} user = {user} resetDomRemove = {resetDomRemove}/>)}
+          {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} user = {user} resetDomRemove = {resetDomRemove} handleEdit = {handleEdit}/>)}
     </div>
   );
 }

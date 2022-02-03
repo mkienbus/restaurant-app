@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function EditForm({restaurant, user}){
+function EditForm({restaurant, user, handleEdit}){
     const [name, setName] = useState(restaurant.name)
     const [cuisine_type, setCuisineType] = useState(restaurant.cuisine_type)
     const [address, setAddress] = useState(restaurant.address)
@@ -8,7 +8,7 @@ function EditForm({restaurant, user}){
 
     function handleSubmit(e){
         e.preventDefault();
-        fetch(`/restaurants${restaurant.id}`, {
+        fetch(`/restaurants/${restaurant.id}`, {
             method: "PATCH",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
@@ -20,7 +20,8 @@ function EditForm({restaurant, user}){
             }),
         })
             .then(r =>r.json())
-            .then(console.log('edited'))
+            .then(r => handleEdit(r))
+            
     }
 
     

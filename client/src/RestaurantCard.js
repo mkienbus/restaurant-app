@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import EditForm from './EditForm';
 
-function RestaurantCard({restaurant, resetDomRemove, user}){
+function RestaurantCard({restaurant, resetDomRemove, user, handleEdit}){
 
   const [editForm, setEditForm] = useState(false)
 
@@ -10,6 +10,7 @@ function RestaurantCard({restaurant, resetDomRemove, user}){
           method: 'DELETE'
         }).then(r => {resetDomRemove(restaurant)})
       }
+
 
     return(
         <div>
@@ -20,7 +21,7 @@ function RestaurantCard({restaurant, resetDomRemove, user}){
             <br></br>
             <button onClick = {e => handleRemove(restaurant)}>Remove above restaurant</button>
             <button onClick = {e => setEditForm(!editForm)}>{editForm ? "Hide edit form" : "Show edit form"}</button>
-            {editForm ? <EditForm restaurant = {restaurant} user = {user} /> :null}
+            {editForm ? <EditForm restaurant = {restaurant} user = {user} handleEdit = {handleEdit}/> :null}
         </div>
     );
 

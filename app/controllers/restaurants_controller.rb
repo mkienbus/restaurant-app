@@ -21,9 +21,10 @@ class RestaurantsController < ApplicationController
 
     end
 
-    #POST route for update
+    #PATCH route for update
     def update
-        restaurant = Restaurant.create(restaurant_params)
+        restaurant = Restaurant.find(params[:id])
+        restaurant.update(restaurant_params)
         render json: restaurant
     end
 
