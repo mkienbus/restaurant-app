@@ -15,8 +15,10 @@ function SignUpForm({setUser}){
         }).then(r => {
             console.log(r)
             r.json().then(user => setUser(user))
-        })
-        // need to reset input field to empty
+        }).then(
+            setUsername('')
+        )
+
     }
 
     return (

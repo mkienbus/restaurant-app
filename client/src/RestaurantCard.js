@@ -1,6 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function RestaurantCard({restaurant, resetDomRemove}){
+
+  const [editForm, setEditForm] = (false)
 
     function handleRemove(restaurant){
         fetch(`/restaurants/${restaurant.id}`, {
@@ -17,6 +19,7 @@ function RestaurantCard({restaurant, resetDomRemove}){
             <br></br>
             <button onClick = {e => handleRemove(restaurant)}>Remove above restaurant</button>
             <button onClick = {e => console.log(e.target.value)}>Edit</button>
+            {/* {editForm ?  } */}
         </div>
     );
 
