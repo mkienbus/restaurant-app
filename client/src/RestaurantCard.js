@@ -19,8 +19,8 @@ function RestaurantCard({restaurant, resetDomRemove, user}){
             <p>{restaurant.address}</p>
             <br></br>
             <button onClick = {e => handleRemove(restaurant)}>Remove above restaurant</button>
-            <button onClick = {e => console.log(e.target.value)}>Edit</button>
-            <EditForm restaurant = {restaurant} user = {user} />
+            <button onClick = {e => setEditForm(!editForm)}>Display/hide edit form</button>
+            {editForm ? <EditForm restaurant = {restaurant} user = {user} /> :null}
         </div>
     );
 
