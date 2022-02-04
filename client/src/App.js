@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
 import About from './About.js';
 import LoginForm from './LoginForm.js';
+import Nav from './Nav';
 
 
 function App() {
@@ -32,14 +33,15 @@ function App() {
     <>
     <main>
     <button onClick = {handleLogoutClick}>Logout</button>
-      <Switch>
-        <Route path = "/about">
-          <About />
+      <Nav />
+        <Switch>
+          <Route path = "/about">
+            <About />
+          </Route>
+        <Route exact path = "/">
+            <Restaurants user = {user} />
         </Route>
-       <Route exact path = "/">
-          <Restaurants user = {user} />
-       </Route>
-      </Switch>
+        </Switch>
     </main>
     </>
   );

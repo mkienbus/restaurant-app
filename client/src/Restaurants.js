@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-  import { Link } from 'react-router-dom';
 import RestaurantCard from './RestaurantCard.js' 
 import RestaurantForm from './RestaurantForm.js';
 
@@ -39,7 +38,6 @@ function Restaurants({user}) {
 
   return (
     <div className="Restaurants">
-        <Link to={`/about`}>About</Link>
         <RestaurantForm user = {user} resetDomForm = {resetDomForm}/>
         <h1>Restaurants</h1>
           {restaurants.map((r) => <RestaurantCard restaurant = {r} key = {r.id} user = {user} resetDomRemove = {resetDomRemove} handleEdit = {handleEdit}/>)}
