@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-function EditForm({restaurant, user, handleEdit}){
+function EditForm({restaurant, user, handleEdit, handleEditClick}){
     const [name, setName] = useState(restaurant.name)
     const [cuisine_type, setCuisineType] = useState(restaurant.cuisine_type)
     const [address, setAddress] = useState(restaurant.address)
@@ -20,7 +20,10 @@ function EditForm({restaurant, user, handleEdit}){
             }),
         })
             .then(r =>r.json())
-            .then(r => handleEdit(r))
+            .then(r => {
+                handleEdit(r)
+                handleEditClick()
+            })
             
     }
 

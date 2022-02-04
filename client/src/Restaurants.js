@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+//import EditForm from './EditForm.js';
 import RestaurantCard from './RestaurantCard.js' 
 import RestaurantForm from './RestaurantForm.js';
 
@@ -33,6 +34,7 @@ function Restaurants({user}) {
         }
       })
       setRestaurants(edited)
+
   }
 
   return (

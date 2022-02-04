@@ -4,13 +4,18 @@ import EditForm from './EditForm';
 function RestaurantCard({restaurant, resetDomRemove, user, handleEdit}){
 
   const [editForm, setEditForm] = useState(false)
+  const [editButton, setEditButton] = useState("Show edit form")
 
     function handleRemove(restaurant){
         fetch(`/restaurants/${restaurant.id}`, {
           method: 'DELETE'
         }).then(r => {resetDomRemove(restaurant)})
       }
-
+    
+    function handleEditClick(){
+      setEditForm(!editForm)
+      !editForm ? setEditButton("Hide edit form") : setEditButton("Show edit form")
+    }
 
     return(
         <div>
@@ -20,8 +25,8 @@ function RestaurantCard({restaurant, resetDomRemove, user, handleEdit}){
             <p>{restaurant.address}</p>
             <br></br>
             <button onClick = {e => handleRemove(restaurant)}>Remove above restaurant</button>
-            <button onClick = {e => setEditForm(!editForm)}>{editForm ? "Hide edit form" : "Show edit form"}</button>
-            {editForm ? <EditForm restaurant = {restaurant} user = {user} handleEdit = {handleEdit}/> :null}
+            <button onClick = {e => handleEditClick()}>{editButton}</button>
+            {editForm ? <EditForm restaurant = {restaurant} user = {user} handleEdit = {handleEdit} handleEditClick = {handleEditClick}/> : null}
         </div>
     );
 
