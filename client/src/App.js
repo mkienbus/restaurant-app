@@ -3,7 +3,8 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
-import RestaurantForm from './RestaurantForm.js';
+//import RestaurantForm from './RestaurantForm.js';
+import About from './About.js';
 import LoginForm from './LoginForm.js';
 
 function App() {
@@ -31,10 +32,13 @@ function App() {
     <>
     <main>
       <Switch>
-        <Route path = "/new">
+        {/* <Route path = "/">
           <RestaurantForm />
+        </Route> */}
+        <Route path = "/about">
+          <About />
         </Route>
-       <Route path = "/">
+       <Route exact path = "/">
           <Restaurants user = {user} />
           <button onClick = {handleLogoutClick}>Logout</button>
        </Route>
