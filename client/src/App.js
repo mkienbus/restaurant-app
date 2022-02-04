@@ -30,13 +30,13 @@ function App() {
   return (
     <>
     <main>
+    <button onClick = {handleLogoutClick}>Logout</button>
       <Switch>
         <Route path = "/about">
           <About />
         </Route>
        <Route exact path = "/">
           <Restaurants user = {user} />
-          <button onClick = {handleLogoutClick}>Logout</button>
        </Route>
       </Switch>
     </main>
