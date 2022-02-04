@@ -3,7 +3,6 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Restaurants from './Restaurants.js';
-//import RestaurantForm from './RestaurantForm.js';
 import About from './About.js';
 import LoginForm from './LoginForm.js';
 
@@ -32,9 +31,6 @@ function App() {
     <>
     <main>
       <Switch>
-        {/* <Route path = "/">
-          <RestaurantForm />
-        </Route> */}
         <Route path = "/about">
           <About />
         </Route>
