@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get '/me', to: "users#show"
   
   resources :restaurants
   resources :users, only: [:create, :index, :show]
