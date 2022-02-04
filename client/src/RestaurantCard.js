@@ -17,12 +17,13 @@ function RestaurantCard({restaurant, resetDomRemove, user, handleEdit}){
       !editForm ? setEditButton("Hide edit form") : setEditButton("Show edit form")
     }
 
+    
     return(
         <div>
             <h2>{restaurant.name}</h2>
             <p>{restaurant.cuisine_type}</p>
-            <p>{restaurant.favorite}</p>
             <p>{restaurant.address}</p>
+            <p>Favorite? {restaurant.favorite ? "Yes" : "No"}</p>
             <br></br>
             <button onClick = {e => handleRemove(restaurant)}>Remove above restaurant</button>
             <button onClick = {e => handleEditClick()}>{editButton}</button>
