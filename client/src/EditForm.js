@@ -33,7 +33,6 @@ function EditForm({restaurant, user, handleEdit, handleEditClick}){
         <div>
             <h3>Edit restaurant information</h3>
             <form onSubmit = {handleSubmit}>
-                {/* text align left in css */}
                 <label>Name:</label>
                 <input type = "text" className = "name" value = {name} onChange = {e => setName(e.target.value)}/>
                 <br></br>

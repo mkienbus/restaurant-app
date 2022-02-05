@@ -5,7 +5,6 @@ import RestaurantForm from './RestaurantForm.js';
 function Restaurants({user}) {
 
   const[restaurants, setRestaurants] = useState([]);
-  console.log(restaurants)
 
   useEffect(() => {
     fetch("/restaurants")

@@ -13,7 +13,6 @@ function SignUpForm({setUser}){
             },
             body: JSON.stringify({username})
         }).then(r => {
-            console.log(r)
             r.json().then(user => setUser(user))
         }).then(
             setUsername('')
