@@ -27,6 +27,7 @@ function EditForm({restaurant, user, handleEdit, handleEditClick}){
             
     }
 
+
     
     return(
         <div>
@@ -43,7 +44,7 @@ function EditForm({restaurant, user, handleEdit, handleEditClick}){
                 <input type = "text" id = "address" value = {address} onChange = {e => setAddress(e.target.value)}/>
                 <br></br>
                 <label>Favorite?</label>
-                <input type = "checkbox" id = "favorite" value = {favorite} onChange = {e => setFavorite(e.target.checked)}/>
+                <input type = "checkbox" id = "favorite" value = {favorite} checked = {favorite} onChange = {e => setFavorite(!favorite)}/>
                 <br></br>
                 <input type = "submit" value = "Submit changes"/>
             </form>
