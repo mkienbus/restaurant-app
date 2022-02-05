@@ -35,16 +35,16 @@ function EditForm({restaurant, user, handleEdit, handleEditClick}){
             <form onSubmit = {handleSubmit}>
                 {/* text align left in css */}
                 <label>Name:</label>
-                <input type = "text" id = "name" value = {name} onChange = {e => setName(e.target.value)}/>
+                <input type = "text" className = "name" value = {name} onChange = {e => setName(e.target.value)}/>
                 <br></br>
                 <label>Cuisine type:</label>
-                <input type = "text" id = "cuisineType" value = {cuisine_type} onChange = {e => setCuisineType(e.target.value)}/>
+                <input type = "text" className = "cuisineType" value = {cuisine_type} onChange = {e => setCuisineType(e.target.value)}/>
                 <br></br>
                 <label>Address:</label>
-                <input type = "text" id = "address" value = {address} onChange = {e => setAddress(e.target.value)}/>
+                <input type = "text" className = "address" value = {address} onChange = {e => setAddress(e.target.value)}/>
                 <br></br>
                 <label>Favorite?</label>
-                <input type = "checkbox" id = "favorite" value = {favorite} checked = {favorite} onChange = {e => setFavorite(!favorite)}/>
+                <input type = "checkbox" className = "favorite" value = {favorite} checked = {favorite} onChange = {e => setFavorite(!favorite)}/>
                 <br></br>
                 <input type = "submit" value = "Submit changes"/>
             </form>
