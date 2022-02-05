@@ -20,20 +20,25 @@ function LoginForm({setUser}){
     }
 
     return(
-        <div>
-            <h4>Login to your account</h4>
-            <form onSubmit = {handleSubmit}>
-                <label>Username:</label>
-                <input 
-                type = "text" 
-                id = "username" 
-                value = {username} 
-                onChange = {e => setUsername(e.target.value)}/>
-                <button>Login</button>
-            </form>
-            <h4>Need to create an account?</h4>
-            <SignUpForm setUser = {setUser}/>
+        <>
+        <div id = "welcomeContainer">
+            <h1 id="welcome">Welcome to Restaurant Tracker</h1>
+            <div id = "login">
+                <h4>Login to your account</h4>
+                <form onSubmit = {handleSubmit}>
+                    <label>Username:</label>
+                    <input 
+                    type = "text" 
+                    id = "username" 
+                    value = {username} 
+                    onChange = {e => setUsername(e.target.value)}/>
+                    <button>Login</button>
+                </form>
+                <h4>Need to create an account?</h4>
+                <SignUpForm setUser = {setUser}/>
+            </div>
         </div>
+        </>
     );
 
 }
