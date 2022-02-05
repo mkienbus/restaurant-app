@@ -31,9 +31,11 @@ function App() {
 
   return (
     <>
-    <main>
-    <button onClick = {handleLogoutClick}>Logout</button>
-      <Nav />
+    <main id = "app">
+    <button id = "logout" onClick = {handleLogoutClick}>Logout</button>
+      <div id = "navBar">
+        <Nav />
+      </div>
         <Switch>
           <Route path = "/about">
             <About />

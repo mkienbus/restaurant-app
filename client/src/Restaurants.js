@@ -36,12 +36,14 @@ function Restaurants({user}) {
   }
 
   return (
-    <div className="Restaurants">
+    <div className= "restaurants">
         <RestaurantForm user = {user} resetDomForm = {resetDomForm}/>
-        <h1>Restaurants</h1>
+          <div id = "restaurants">
+          <h1 style={{marginLeft: "22%"}}>Restaurants</h1>
           {restaurants.map((r) => 
           <RestaurantCard restaurant = {r} key = {r.id} user = {user} resetDomRemove = {resetDomRemove} handleEdit = {handleEdit}/>)
           }
+          </div>
     </div>
   );
 }

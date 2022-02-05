@@ -11,3 +11,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#app {
+  background-color: darkgray;
+  height: 200px;
+  position: relative;
+  border: 5px solid black;
+  }
+
+#logout{
+  position: absolute;
+  left: 95%;
+}
+
+#navBar{
+  position: absolute;
+  left: 50%;
+}
+
+#restaurants{
+  position: absolute;
+  left: 40%;
+}
+
+#restaurantCard{
+  border: 5px solid black;
+  position: relative;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}

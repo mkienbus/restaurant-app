@@ -19,7 +19,7 @@ function RestaurantCard({restaurant, resetDomRemove, user, handleEdit}){
 
     
     return(
-        <div>
+        <div id = "restaurantCard">
             <h2>{restaurant.name}</h2>
             <p>{restaurant.cuisine_type}</p>
             <p>{restaurant.address}</p>
