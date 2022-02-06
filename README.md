@@ -10,15 +10,31 @@ This application is meant to be a demonstration of the skills I have learned so 
 | React | 17.0.2|
 
 ## Installation:
-- Ruby:  
+- **Ruby**:  
   Run `rvm install 2.7.4 --default`  
   Also install the latest versions of bundler and rails
   ```
   gem install bundler
   gem install rails
   ```
-- PostgreSQL  
-  
+- **PostgreSQL**  
+  Easily installable on OSX with homebrew.  
+  Run `brew install postgresql`  
+  After installation is complete, run `brew services start postgresql` to start Postgres services.  
+- **Node**  
+  Run
+  ```
+  nvm install 16
+  nvm use 16
+  ```
+  to install and set node 16 as default. 
+- **React**  
+  Run `npm install react@17.0.2`
+
+
+## Usage
+
+
 \
 \
 \
@@ -42,7 +58,7 @@ This application is meant to be a demonstration of the skills I have learned so 
 ## License
 MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) [2022] [Michael Kienbusch]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
