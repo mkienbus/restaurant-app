@@ -1,9 +1,24 @@
 # Restaurant Tracker App
 ## Description:
-This application is meant to be a demonstration of the skills I have learned so far in my programming course.  
-It utilizes a PostgreSQL database, Ruby on Rails backend, and the React framework for the frontend.  
+This application is meant to be a demonstration of the skills I have learned so far in my programming course. It utilizes a PostgreSQL database, Ruby on Rails backend, and the React framework for the frontend. My focus on this application was the functionality between the back and front ends, without a heavy focus on the front/styling.  
+## Requirements:  
+| Requirement | Version |
+| --- | --- |
+| Ruby | 2.7.4 |
+| PostgreSQL | 14.1 |
+| Node | 16.13.2 |
+| React | 17.0.2|
 
-\
+## Installation:
+- Ruby:  
+  Run `rvm install 2.7.4 --default`  
+  Also install the latest versions of bundler and rails
+  ```
+  gem install bundler
+  gem install rails
+  ```
+- PostgreSQL  
+  
 \
 \
 \
