@@ -33,28 +33,19 @@ This application is meant to be a demonstration of the skills I have learned so 
 
 
 ## Usage
+- The application initially directs the user to a login page, with an option to create a username for new users. If you do not run `rails db:seed` to populate with the provided seed file, you can create your own username at this time.  
+  
+![login](./images/login.png)  
+##### (note: there is no password authentication on this application)
 
-
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-
+- After logging in or creating a username to login with, you are directed to the home page which renders a list of all your restaurants and their attributes.  
+  
+![home](./images/home.png)  
+- The home page also has a navigation bar and logout button at the top. You can also edit information on the rendered items in your list.  
+  
+![usage](./images/usageGif.gif)  
+## Roadmap  
+I would like to add password authentication to this application in the near future. 
 ## License
 MIT License
 
