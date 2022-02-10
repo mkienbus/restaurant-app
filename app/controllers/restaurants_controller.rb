@@ -1,7 +1,5 @@
 class RestaurantsController < ApplicationController
-    skip_before_action :authorize, only: :create
-
-    #needs error handling when unauthorized user tries to log in
+    skip_before_action :authorize
 
     #POST route for create
     def create

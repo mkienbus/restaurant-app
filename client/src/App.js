@@ -8,7 +8,7 @@ import LoginForm from './LoginForm.js';
 import Nav from './Nav';
 
 
-function App() {
+export default function App() {
   const [user, setUser] = useState(null)
 
   //automatic login
@@ -48,5 +48,3 @@ function App() {
     </>
   );
 }
-
-export default App;

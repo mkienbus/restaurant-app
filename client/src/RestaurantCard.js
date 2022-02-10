@@ -25,8 +25,8 @@ function RestaurantCard({restaurant, resetDomRemove, user, handleEdit}){
             <p>{restaurant.address}</p>
             <p>Favorite? {restaurant.favorite ? "Yes" : "No"}</p>
             <br></br>
-            <button onClick = {e => handleRemove(restaurant)}>Remove restaurant</button>
-            <button onClick = {e => handleEditClick()}>{editButton}</button>
+            <button onClick = {() => handleRemove(restaurant)}>Remove restaurant</button>
+            <button onClick = {() => handleEditClick()}>{editButton}</button>
             {editForm ? <EditForm restaurant = {restaurant} user = {user} handleEdit = {handleEdit} handleEditClick = {handleEditClick}/> : null}
         </div>
     );
