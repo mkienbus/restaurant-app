@@ -4,6 +4,7 @@ import SignUpForm from './SignUpForm';
 function LoginForm({setUser}){
 
     const [username, setUsername] = useState("")
+    const [error, setError] = useState("")
 
     function handleSubmit(e){
         e.preventDefault()
@@ -14,7 +15,12 @@ function LoginForm({setUser}){
             },
             body: JSON.stringify({username})
         }).then(r => {
+            if(r.ok){
             r.json().then(user => setUser(user))
+            }
+            else {
+                r.json().then(error => setError(error.error))
+            }
         })
     }
 
@@ -25,6 +31,8 @@ function LoginForm({setUser}){
             <div id = "login">
                 <h4>Login to your account</h4>
                 <form onSubmit = {handleSubmit}>
+                    {error ? <span>{error}</span> : <span></span>}
+                    <br></br>
                     <label>Username:</label>
                     <input 
                     type = "text" 
