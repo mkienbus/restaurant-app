@@ -27,7 +27,7 @@ export default function App() {
       .then(r => setUser(null))
   }
 
-  if (!user) return <LoginForm setUser = {setUser} />
+  if (!user) return <LoginForm setUser = {setUser} user = {user} />
 
   return (
     <>

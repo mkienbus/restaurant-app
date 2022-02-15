@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import SignUpForm from './SignUpForm';
 
-function LoginForm({setUser}){
+function LoginForm({setUser, user}){
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -14,7 +14,11 @@ function LoginForm({setUser}){
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({username, password})
+            body: JSON.stringify({
+                username, 
+                password,
+                // user_id: user.id
+            })
         }).then(r => {
             if(r.ok){
             r.json().then(user => setUser(user))
