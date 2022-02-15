@@ -15,7 +15,14 @@ class UsersController < ApplicationController
     #POST route for signup
     def create
         user = User.create(user_params)
-        render json: user
+        session[:user_id] = user.id
+
+        if user.valid?
+        render json: user, status: :created
+
+        else
+            render json: {errors: user.errors.full_messages }, status: :unprocessable_entity
+        end
     end
 
 

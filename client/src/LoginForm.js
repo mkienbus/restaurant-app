@@ -4,6 +4,7 @@ import SignUpForm from './SignUpForm';
 function LoginForm({setUser}){
 
     const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
     function handleSubmit(e){
@@ -13,7 +14,7 @@ function LoginForm({setUser}){
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({username})
+            body: JSON.stringify({username, password})
         }).then(r => {
             if(r.ok){
             r.json().then(user => setUser(user))
@@ -39,7 +40,16 @@ function LoginForm({setUser}){
                     id = "username" 
                     value = {username} 
                     onChange = {e => setUsername(e.target.value)}/>
-                    <button>Login</button>
+                    {/* added on  */}
+                    <br></br>
+                    <label>Password: </label>
+                    <input
+                    type = "password"
+                    id = "password1"
+                    value = {password}
+                    onChange = {e => setPassword(e.target.value)}/>
+                    {/* end additions */}
+                    <button type = "submit" >Login</button>
                 </form>
                 <h4>Need to create an account?</h4>
                 <SignUpForm setUser = {setUser}/>

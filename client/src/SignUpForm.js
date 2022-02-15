@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 
 function SignUpForm({setUser}){
     const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
     function handleSubmit(e){
         e.preventDefault()
@@ -11,7 +13,7 @@ function SignUpForm({setUser}){
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({username})
+            body: JSON.stringify({username, password, password_confirmation: passwordConfirmation})
         }).then(r => {
             r.json().then(user => setUser(user))
         }).then(
@@ -29,6 +31,24 @@ function SignUpForm({setUser}){
                 id = "signupUsername" 
                 value = {username} 
                 onChange = {e => setUsername(e.target.value)}/>
+                <br></br>
+                <label htmlFor="password">Password: </label>
+                <input
+                type="password"
+                id="password2"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+                />
+                <br></br>
+                <label htmlFor="password">Password{<br></br>}Confirmation:</label>
+                <input
+                type="password"
+                id="password_confirmation"
+                value={passwordConfirmation}
+                onChange={(e) => setPasswordConfirmation(e.target.value)}
+                autoComplete="current-password"
+                />
                 <button>Create</button>
             </form>
         </div>
