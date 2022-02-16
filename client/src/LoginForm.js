@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import SignUpForm from './SignUpForm';
 
-function LoginForm({setUser, user}){
+function LoginForm({setUser}){
 
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -16,8 +16,7 @@ function LoginForm({setUser, user}){
             },
             body: JSON.stringify({
                 username, 
-                password,
-                // user_id: user.id
+                password
             })
         }).then(r => {
             if(r.ok){
@@ -44,7 +43,6 @@ function LoginForm({setUser, user}){
                     id = "username" 
                     value = {username} 
                     onChange = {e => setUsername(e.target.value)}/>
-                    {/* added on  */}
                     <br></br>
                     <label>Password: </label>
                     <input
@@ -52,7 +50,6 @@ function LoginForm({setUser, user}){
                     id = "password1"
                     value = {password}
                     onChange = {e => setPassword(e.target.value)}/>
-                    {/* end additions */}
                     <button type = "submit" >Login</button>
                 </form>
                 <h4>Need to create an account?</h4>

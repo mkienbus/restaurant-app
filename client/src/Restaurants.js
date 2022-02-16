@@ -7,9 +7,12 @@ function Restaurants({user}) {
   const[restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    fetch("/restaurants")
+    fetch(`/users/${user.id}`)
       .then((r) => r.json())
-      .then(setRestaurants)
+      .then((d) => {
+        setRestaurants(d.restaurants)
+      })
+      //eslint-disable-next-line
   }, [])
 
   function resetDomRemove(restaurant){
