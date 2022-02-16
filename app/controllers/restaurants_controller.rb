@@ -13,6 +13,12 @@ class RestaurantsController < ApplicationController
         render json: restaurants
     end
 
+    #GET route for favorites
+    def favorites
+        restaurants = Restaurant.favorite
+        render json: restaurants
+    end
+
     #GET route for show
     def show
         restaurant = Restaurant.find(params[:id])
