@@ -18,7 +18,7 @@ export default function App() {
         r.json().then((user) => setUser(user));
       }
     })
-  }, []);
+  }, []); 
 
   function handleLogoutClick(){
     fetch('/logout', {
